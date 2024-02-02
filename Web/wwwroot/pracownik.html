@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/modalWindow.css" />
+    <title>Strona Główna</title>
+    <script src="./js/pracownik.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="navbar">
+        <div>
+          <h1 class="navbar-text">System Szkoleń</h1>
+        </div>
+      </div>
+      <div class="center">
+        <div class="left-menu">
+          <nav>
+            <ul>
+              <li><a href="index.html">Strona główna</a></li>
+              <li><a href="pracownicy.html">Pracownicy</a></li>
+              <li><a href="szkolenia.html">Szkolenia</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="mid-side">
+          <div class="info">
+            <h1 id="nazwa">Pracownik</h1>
+            <div class="detail" id="imie"><span>Imię:</span><br /></div>
+            <div class="detail" id="nazwisko"><span>Nazwisko:</span><br /></div>
+            <div class="detail" id="plec"><span>Płeć:</span><br /></div>
+            <div class="detail" id="data-urodzenia">
+              <span>Data urodzenia:</span><br />
+            </div>
+            <div class="detail" id="pesel"><span>Pesel:</span><br /></div>
+            <div class="detail" id="uwagi"><span>Uwagi:</span><br /></div>
+            <div class="edit-button">
+              <button class="edit" onclick="openModal()">Edytuj</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Edytuj pracownika</h2>
+        <form id="editForm">
+          <div class="form-group">
+            <label for="imie">Imię:</label>
+            <input type="text" id="imieInput" name="imie" required />
+          </div>
+          <div class="form-group">
+            <label for="nazwisko">Nazwisko:</label>
+            <input type="text" id="nazwiskoInput" name="nazwisko" required />
+          </div>
+          <div class="form-group">
+            <label for="plec">Płeć:</label>
+            <select id="plecInput" name="plec" required>
+              <option value="M">Mężczyzna</option>
+              <option value="K">Kobieta</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="data-urodzenia">Data urodzenia:</label>
+            <input
+              type="date"
+              id="dataUrodzeniaInput"
+              name="data-urodzenia"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="pesel">Pesel:</label>
+            <input type="text" id="peselInput" name="pesel" required />
+          </div>
+          <div class="form-group">
+            <label for="uwagi">Uwagi:</label>
+            <textarea id="uwagiInput" name="uwagi"></textarea>
+          </div>
+          <button type="submit">Zapisz</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

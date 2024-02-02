@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/modalWindow.css" />
+    <title>Strona Główna</title>
+    <script src="./js/szkolenie.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="navbar">
+        <div>
+          <h1 class="navbar-text">System Szkoleń</h1>
+        </div>
+      </div>
+      <div class="center">
+        <div class="left-menu">
+          <nav>
+            <ul>
+              <li><a href="index.html">Strona główna</a></li>
+              <li><a href="pracownicy.html">Pracownicy</a></li>
+              <li><a href="szkolenia.html">Szkolenia</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="mid-side">
+          <div class="info">
+            <h1>Szkolenie</h1>
+            <div class="detail" id="nazwa"><span>Nazwa:</span><br /></div>
+            <div class="detail" id="organizator">
+              <span>Organizator:</span><br />
+            </div>
+            <div class="detail" id="dataOd">
+              <span>Data rozpoczęcia:</span><br />
+            </div>
+            <div class="detail" id="dataDo">
+              <span>Data zakończenia:</span><br />
+            </div>
+            <div class="detail" id="uwagi"><span>Uwagi:</span><br /></div>
+            <div class="edit-button">
+              <button class="edit" onclick="openModal()">Edytuj</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Edytuj szkolenie</h2>
+        <form id="editForm">
+          <div class="form-group">
+            <label for="nazwa">Nazwa:</label>
+            <input type="text" id="nazwaInput" name="nazwa" required />
+          </div>
+          <div class="form-group">
+            <label for="organizator">Organizator:</label>
+            <input
+              type="text"
+              id="organizatorInput"
+              name="organizator"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="data-od">Data rozpoczęcia:</label>
+            <input type="date" id="dataOdInput" name="data-od" required />
+          </div>
+          <div class="form-group">
+            <label for="data-do">Data zakończenia:</label>
+            <input type="date" id="dataDoInput" name="data-do" required />
+          </div>
+          <div class="form-group">
+            <label for="uwagi">Uwagi:</label>
+            <textarea id="uwagiInput" name="uwagi"></textarea>
+          </div>
+          <button type="submit">Zapisz</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
